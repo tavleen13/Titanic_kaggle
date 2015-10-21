@@ -9,10 +9,10 @@ train = pd.read_csv(r'C:\Users\HP1\PycharmProjects\titanic\input\train.csv', dty
 test = pd.read_csv(r'C:\Users\HP1\PycharmProjects\titanic\input\test.csv', dtype={"Age": np.float64},)
 
 #Print to standard output, and see the results in the "log" section below after running your script
-print("\n\nTop of the training data:")
-print(train.head(2))
-print("\n\nSummary statistics of training data")
-print(train.describe())
+#print("\n\nTop of the training data:")
+#print(train.head(2))
+#print("\n\nSummary statistics of training data")
+#print(train.describe())
 count =0
 #Number of missing or NA in age
 
@@ -60,7 +60,7 @@ plt.clf()
 
 predict=pd.DataFrame({"PassengerId": test['PassengerId'], "Survived": pd.Series(dtype='int32')})
 predict['Survived']=[1 if x=='female' else 0 for x in test['Sex']]
-predict.to_csv("genderbasedmodel.csv",index=False)
+predict.to_csv("titanic_gender.csv",index=False)
 #if predict['Survived'] == train['Survived']:
  #   count = count + 1
 #accuracy = count/len(train)
